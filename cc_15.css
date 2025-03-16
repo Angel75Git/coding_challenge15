@@ -2,5 +2,25 @@ body {
     font-family: Arial, sans-serif;
     margin: 20px;
     text-align: center;
+    background-color: lightgray;
     
+}
+header {
+    background-color: #2b4053; 
+    color: white;           
+    padding: 20px;             
+    text-align: center;        
+}
+
+footer {
+    background-color: #333;  
+    color: white;             
+    padding: 10px;             
+    text-align: center;        
+    position: fixed;           
+    bottom: 0;
+    width: 100%;
+}
+#riskDashboard {
+    background-color: aquamarine;
 }
