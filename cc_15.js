@@ -68,6 +68,33 @@ document.getElementById("submit-btn").addEventListener("click", function(event){
     inputLvl.value = "";
     inputDep.value = "";   
 })
-
+//Test cases for task 4
 addRiskItem("Cybersecurity Threat", "High", "IT");
 addRiskItem("HR Compliance Issue", "Low", "Human Resources");
+
+//Getting all cards using node arrays
+document.getElementById("increase-btn").addEventListener("click", function (event) {
+
+    const riskCards = riskContainer.getElementsByClassName("risk-card");
+    allCards = Array.from(riskCards);
+    allCards.forEach(card => {
+        const currentRiskLevel = card.querySelector("span").textContent.split(": ")[1].toLowerCase(); 
+        // Get the span that displays the risk level
+        const itemLevelElement = card.querySelector("span"); 
+
+        if (currentRiskLevel === "low") {
+            // Change Low to Medium
+            itemLevelElement.textContent = "Risk Level: Medium";
+            card.classList.remove("low-level");
+            card.classList.add("medium-level");
+        } else if (currentRiskLevel === "medium") {
+            // Change Medium to High
+            itemLevelElement.textContent = "Risk Level: High";
+            card.classList.remove("medium-level");
+            card.classList.add("high-level");
+            //Leaving high becuase there is not more higher level
+        }
+    })
+});
+addRiskItem("Employee Retention", "Low", "HR");
+// Clicking "Increase Risk Levels" should change it to "Medium".
