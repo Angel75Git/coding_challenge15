@@ -20,11 +20,18 @@ itemLevel.textContent = `Risk Level: ${riskLevel}`;
     const itemDepart = document.createElement("p");
     itemDepart.textContent = department;
 
+    //Modification - Task 3
+    const removebtn = document.createElement("button")
+    removebtn.textContent = "Resolve"
+    removebtn.addEventListener("click", function(){
+        riskContainer.removeChild(itemCard)
+    })
 
    //Adopting the childs to item card
     itemCard.appendChild(itemName);
     itemCard.appendChild(itemLevel);
     itemCard.appendChild(itemDepart);
+    itemCard.appendChild(removebtn)
 
 
     riskContainer.appendChild(itemCard);
@@ -33,6 +40,7 @@ itemLevel.textContent = `Risk Level: ${riskLevel}`;
 //Test Cases: 
 addRiskItem("Data Breach", "High", "IT");
 addRiskItem("Supply Chain Disruption", "Medium", "Operations");
+addRiskItem("Market Fluctuations", "High", "Finance");
 //addRiskItem("Server Down", "High", "IT");
 //addRiskItem("Someone spilled Coffee", "High", "Main Lounge");
  
