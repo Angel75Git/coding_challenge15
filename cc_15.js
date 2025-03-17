@@ -66,7 +66,9 @@ document.getElementById("submit-btn").addEventListener("click", function(event){
 //clearing the form for additional inputs
     inputName.value = "";
     inputLvl.value = "";
-    inputDep.value = "";   
+    inputDep.value = "";  
+    //Task 6 
+    event.stopPropagation() 
 })
 //Test cases for task 4
 addRiskItem("Cybersecurity Threat", "High", "IT");
@@ -94,6 +96,8 @@ document.getElementById("increase-btn").addEventListener("click", function (even
             card.classList.add("high-level");
             //Leaving high becuase there is not more higher level
         }
+        //Task 6
+        event.stopPropagation()
     })
 });
 addRiskItem("Employee Retention", "Low", "HR");

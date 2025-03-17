@@ -81,8 +81,10 @@ button {
 }
 #increase-btn {
     background-color: rgb(180, 45, 14);
-    width: 300px;
+    width: 150px;
     font-size: 16px;
+    margin: 10px;
+    height: 150px;
 
 }
 .high-level {
