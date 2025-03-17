@@ -78,3 +78,12 @@ button {
     font-size: 14px;
     border-radius: 5px;
 }
+.high-level {
+    background-color: red;
+}
+.medium-level {
+    background-color: yellow;
+}
+.low-level {
+    background-color: green;
+}

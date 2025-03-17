@@ -13,8 +13,8 @@ const riskContainer = document.getElementById("riskDashboard");
     itemName.textContent = riskName;
 
 //Getting the level of the risk on the card
-const itemLevel = document.createElement("span");
-itemLevel.textContent = `Risk Level: ${riskLevel}`;
+    const itemLevel = document.createElement("span");
+    itemLevel.textContent = `Risk Level: ${riskLevel}`;
 
 //Getting the department of the risk on the card
     const itemDepart = document.createElement("p");
@@ -27,12 +27,23 @@ itemLevel.textContent = `Risk Level: ${riskLevel}`;
         riskContainer.removeChild(itemCard)
     })
 
+    //Modification -Task 4
+    //Creating a distintion of levels
+    if (riskLevel.toLowerCase() === "high")
+        itemCard.classList.add("high-level")
+    if (riskLevel.toLowerCase() === "medium")
+        itemCard.classList.add("medium-level")
+    if (riskLevel.toLowerCase() === "low")
+        itemCard.classList.add("low-level")
+
+
    //Adopting the childs to item card
     itemCard.appendChild(itemName);
     itemCard.appendChild(itemLevel);
     itemCard.appendChild(itemDepart);
     itemCard.appendChild(removebtn)
 
+    
 
     riskContainer.appendChild(itemCard);
 }
@@ -55,9 +66,8 @@ document.getElementById("submit-btn").addEventListener("click", function(event){
 //clearing the form for additional inputs
     inputName.value = "";
     inputLvl.value = "";
-    inputDep.value = ";"
-    
-    
-
+    inputDep.value = "";   
 })
 
+addRiskItem("Cybersecurity Threat", "High", "IT");
+addRiskItem("HR Compliance Issue", "Low", "Human Resources");
